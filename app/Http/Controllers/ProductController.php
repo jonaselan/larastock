@@ -23,9 +23,6 @@
       // $id = Request::input('id', '0');
       // in this case you can use ROUTE instead, for get on route
       $response = Product::find($id);
-      if(empty($response)) {
-        return "Esse produto não existe";
-      }
       return view('show')->with('p', $response);
     }
   }
