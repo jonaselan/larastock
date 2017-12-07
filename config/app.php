@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        larastock\Providers\AppServiceProvider::class,
+        larastock\Providers\AuthServiceProvider::class,
+        // larastock\Providers\BroadcastServiceProvider::class,
+        larastock\Providers\EventServiceProvider::class,
+        larastock\Providers\RouteServiceProvider::class,
 
     ],
 

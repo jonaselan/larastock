@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace larastock\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use larastock\User;
+use larastock\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \larastock\User
      */
     protected function create(array $data)
     {

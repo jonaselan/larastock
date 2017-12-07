@@ -22,7 +22,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "larastock\\": "app/"
         }
     },
     "autoload-dev": {
