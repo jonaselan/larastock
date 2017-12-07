@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.layout')
 @section('content')
   @unless(empty($p))
     <h1>Detalhes do produto: {{ $p->name }} </h1>

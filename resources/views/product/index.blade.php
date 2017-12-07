@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.layout')
 @section('content')
   @if($products)
     <h1>Listagem de produtos</h1>
@@ -21,7 +21,7 @@
       <span class="label label-danger pull-right">
         Um ou menos itens no estoque
       </span>
-    </h4>?
+    </h4>
   @else
     <h2> Você não tem produtos cadastrados </h2>
   @endif
