@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', 'ProductController@index');
+// id is only number
+Route::group(['prefix'=>'products', 'where'=>['id'=>'[0-9]+']], function() {
+  Route::get('', 'ProductController@index');
+  Route::get('{id}', 'ProductController@show');
+});
