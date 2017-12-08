@@ -25,6 +25,25 @@
       $response = Product::find($id);
       return view('product.show')->with('p', $response);
     }
+
+    public function new(){
+      return view('product.new');
+    }
+
+    public function create(){
+      $name = Request::input('name');
+      $value = Request::input('value');
+      $description = Request::input('description');
+      $count = Request::input('count');
+
+      DB::insert('insert into products
+      (name, count, value, description) values (?,?,?,?)',
+      array($name, $value, $description, $count));
+      // $input = $request->all();
+      // Product::create($input);
+      $products = Product::all();
+      return view('product.index')->withProducts($products);
+    }
   }
 
 ?>

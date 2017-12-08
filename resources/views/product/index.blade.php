@@ -17,6 +17,7 @@
         </tr>
       @endforeach
     </table>
+    <a href="/products/new">Novo produto</a>
     <h4>
       <span class="label label-danger pull-right">
         Um ou menos itens no estoque
