@@ -37,12 +37,11 @@
       $count = Request::input('count');
 
       DB::insert('insert into products
-      (name, count, value, description) values (?,?,?,?)',
+      (name, value, description, count) values (?,?,?,?)',
       array($name, $value, $description, $count));
-      // $input = $request->all();
-      // Product::create($input);
-      $products = Product::all();
-      return view('product.index')->withProducts($products);
+
+      return redirect('ProductController@index')
+              ->withInput(Request::only('name'));
     }
   }
 

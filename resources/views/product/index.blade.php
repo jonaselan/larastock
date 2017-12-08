@@ -1,6 +1,10 @@
 @extends('layout.layout')
 @section('content')
   @if($products)
+    <div class="alert alert-success">
+      <strong>Sucesso!</strong>
+      O produto {{ old('name') }} foi adicionado.
+    </div>
     <h1>Listagem de produtos</h1>
     <table class="table table-striped table-bordered table-hover">
       @foreach($products as $p)
