@@ -11,4 +11,9 @@ class Product extends Model
   public function evaluations(){
     return $this->hasMany('larastock\EvaluateProduct');
   }
+
+  public function tags(){
+    return $this->belongsToMany('larastock\Tag');
+  }
+
 }
