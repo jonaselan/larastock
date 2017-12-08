@@ -31,18 +31,16 @@
     }
 
     public function store(){
-      $name = Request::input('name');
-      $value = Request::input('value');
-      $description = Request::input('description');
-      $count = Request::input('count');
-
-      DB::insert('insert into products
-      (name, value, description, count) values (?,?,?,?)',
-      array($name, $value, $description, $count));
-
+      Product::create(Request::all());
       return redirect()
               ->action('ProductController@index')
               ->withInput(Request::only('name'));
+    }
+
+    public function destroy($id){
+      Product::find($id)->delete();
+      return redirect()
+              ->action('ProductController@index');
     }
   }
 

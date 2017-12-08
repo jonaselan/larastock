@@ -14,8 +14,13 @@
           <td>{{ $p->value }}</td>
           <td>{{ $p->count }}</td>
           <td>
-            <a href="/products/{{ $p->id }}">
+            <a href="{{action('ProductController@show', $p->id)}}">
               <span class="glyphicon glyphicon-search"></span>
+            </a>
+          </td>
+          <td>
+            <a href="{{action('ProductController@destroy', $p->id)}}">
+              <span class="glyphicon glyphicon-trash"></span>
             </a>
           </td>
         </tr>

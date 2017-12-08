@@ -21,4 +21,5 @@ Route::group(['prefix'=>'products', 'where'=>['id'=>'[0-9]+']], function() {
   Route::get('{id}', 'ProductController@show');
   Route::get('create', 'ProductController@create');
   Route::post('', 'ProductController@store');
+  Route::get('delete/{id}', 'ProductController@destroy');
 });
