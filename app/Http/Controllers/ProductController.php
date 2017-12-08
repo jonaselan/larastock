@@ -26,11 +26,11 @@
       return view('product.show')->with('p', $response);
     }
 
-    public function new(){
-      return view('product.new');
+    public function create(){
+      return view('product.create');
     }
 
-    public function create(){
+    public function store(){
       $name = Request::input('name');
       $value = Request::input('value');
       $description = Request::input('description');
@@ -40,7 +40,8 @@
       (name, value, description, count) values (?,?,?,?)',
       array($name, $value, $description, $count));
 
-      return redirect('ProductController@index')
+      return redirect()
+              ->action('ProductController@index')
               ->withInput(Request::only('name'));
     }
   }

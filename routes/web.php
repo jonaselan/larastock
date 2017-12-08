@@ -19,6 +19,6 @@ Route::get('/', function () {
 Route::group(['prefix'=>'products', 'where'=>['id'=>'[0-9]+']], function() {
   Route::get('', 'ProductController@index');
   Route::get('{id}', 'ProductController@show');
-  Route::get('new', 'ProductController@new');
-  Route::post('create', 'ProductController@create');
+  Route::get('create', 'ProductController@create');
+  Route::post('', 'ProductController@store');
 });
