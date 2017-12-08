@@ -3,6 +3,7 @@
 
   use Illuminate\Support\Facades\DB;
   use larastock\Product;
+  use larastock\Http\Requests\ProductsRequest;
   use Request;
   /**
    *
@@ -30,8 +31,8 @@
       return view('product.create');
     }
 
-    public function store(){
-      Product::create(Request::all());
+    public function store(ProductsRequest $request){
+      Product::create($request->all());
       return redirect()
               ->action('ProductController@index')
               ->withInput(Request::only('name'));
