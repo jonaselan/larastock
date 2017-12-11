@@ -4,6 +4,8 @@ namespace larastock\Http\Controllers\Auth;
 
 use larastock\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use larastock\Events\PostUserRegister;
+use larastock\User;
 
 class LoginController extends Controller
 {
@@ -34,6 +36,6 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+      $this->middleware('guest')->except('logout');
     }
 }
