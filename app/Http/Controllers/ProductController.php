@@ -3,13 +3,18 @@
 
   use Illuminate\Support\Facades\DB;
   use larastock\Product;
+  use Illuminate\Auth\Middleware\Authenticate;
   use larastock\Http\Requests\ProductsRequest;
   use Request;
   /**
    *
    */
+
   class ProductController extends Controller
   {
+    public function __construct() {
+      $this->middleware('auth');
+    }
 
     public function index(){
       // $products = DB::select('select * from products');
