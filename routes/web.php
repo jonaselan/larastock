@@ -23,3 +23,5 @@ Route::group(['prefix'=>'products', 'where'=>['id'=>'[0-9]+']], function() {
   Route::post('', 'ProductController@store');
   Route::get('delete/{id}', 'ProductController@destroy');
 });
+
+Auth::routes();

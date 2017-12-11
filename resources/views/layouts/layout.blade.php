@@ -21,8 +21,24 @@
             </a>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ action('ProductController@index') }}">Listagem</a></li>
-            <li><a href="{{ action('ProductController@create') }}">Criar</a></li>
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+              <li><a href="{{ action('ProductController@index') }}">Listagem</a></li>
+              <li><a href="{{ action('ProductController@create') }}">Criar</a></li>
+              <li>
+                  <a href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                      Logout
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+              </li>
+            @endguest
           </ul>
         </div>
       </nav>
