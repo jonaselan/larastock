@@ -6,6 +6,7 @@ namespace larastock\Http\Controllers\Auth;
 use larastock\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use larastock\User;
 
 class RegisterController extends Controller
 {
@@ -62,13 +63,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-        // Make a queue
-        event(new PostUserRegister($user));
-        return $user;
+        // TODO: Make a queue
+        // event(new PostUserRegister($data['name']));
     }
 }
