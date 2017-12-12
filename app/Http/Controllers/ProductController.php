@@ -6,6 +6,7 @@
   use Illuminate\Auth\Middleware\Authenticate;
   use larastock\Http\Requests\ProductsRequest;
   use Request;
+  use Debugbar;
   /**
    *
    */
@@ -19,6 +20,7 @@
     public function index(){
       // $products = DB::select('select * from products');
       $products = Product::all();
+      Debugbar::addMessage('my message', 'test');
       // U can too passing an array through return
       // return view('products.index', ['products'=>$products]);
       return view('product.index')->withProducts($products);
