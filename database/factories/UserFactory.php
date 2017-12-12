@@ -23,3 +23,26 @@ $factory->define(larastock\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(larastock\Product::class, function (Faker $faker) {
+    return [
+        'name' => $faker->firstName,
+        'count' => $faker->randomDigit,
+        'value' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 10),
+        'description' => $faker->text,
+    ];
+});
+
+$factory->define(larastock\Tag::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word
+    ];
+});
+
+$factory->define(larastock\EvaluateProduct::class, function (Faker $faker) {
+    return [
+        'note' => $faker->randomDigit,
+        'comment' => $faker->text,
+        'product_id' => Product::first()
+    ];
+});
