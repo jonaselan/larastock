@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::group(['prefix'=>'products', 'where'=>['id'=>'[0-9]+']], function() {
   Route::get('', 'ProductController@index');
   Route::get('{id}', 'ProductController@show');
+  Route::get('{id}/edit','ProductController@edit');
+  Route::put('{id}','ProductController@update');
   Route::get('create', 'ProductController@create');
   Route::post('', 'ProductController@store');
   Route::get('delete/{id}', 'ProductController@destroy');

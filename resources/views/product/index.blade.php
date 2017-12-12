@@ -17,12 +17,17 @@
           <td>{{ $p->count }}</td>
           <td>
             <a href="{{action('ProductController@show', $p->id)}}">
-              <span class="glyphicon glyphicon-search"></span>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </a>
           </td>
           <td>
             <a href="{{action('ProductController@destroy', $p->id)}}">
               <span class="glyphicon glyphicon-trash"></span>
+            </a>
+          </td>
+          <td>
+            <a href="{{action('ProductController@edit', $p->id)}}">
+              <span class="glyphicon glyphicon-pencil"></span>
             </a>
           </td>
         </tr>

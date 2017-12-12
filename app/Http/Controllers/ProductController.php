@@ -32,6 +32,17 @@
       return view('product.show')->with('p', $response);
     }
 
+    public function edit($id){
+      $product = Product::find($id);
+      return view('product.edit', compact('product'));
+    }
+
+    public function update(ProductsRequest $request, $id){
+      $product = Product::find($id)->update($request->all());
+      return redirect()
+              ->action('ProductController@index');
+    }
+
     public function create(){
       return view('product.create');
     }
