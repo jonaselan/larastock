@@ -11,8 +11,11 @@
       <div class="col-md-6">
         <h1>Listagem de produtos</h1>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <a href="{{route('new_evaluation')}}">Criar avaliação</a>
+      </div>
+      <div class="col-md-3">
+        <a href="{{ action('ProductController@create')}}">Novo produto</a>
       </div>
     </div>
     <table class="table table-striped table-bordered table-hover">
@@ -40,7 +43,7 @@
         </tr>
       @endforeach
     </table>
-    <a href="{{ action('ProductController@create')}}">Novo produto</a>
+    {{ $products->links() }}
     <h4>
       <span class="label label-danger pull-right">
         Um ou menos itens no estoque

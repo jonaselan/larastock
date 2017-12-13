@@ -19,7 +19,7 @@
 
     public function index(){
       // $products = DB::select('select * from products');
-      $products = Product::all();
+      $products = Product::simplePaginate(7);
       Debugbar::addMessage('my message', 'test');
       // U can too passing an array through return
       // return view('products.index', ['products'=>$products]);
