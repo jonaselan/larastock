@@ -25,7 +25,7 @@ class EvaluateProductsRequest extends FormRequest
     {
       return [
         'comment' => 'required|max:255',
-        'note' => 'required|numeric|max:2'
+        'note' => 'required|numeric|max:10'
       ];
     }
 }
